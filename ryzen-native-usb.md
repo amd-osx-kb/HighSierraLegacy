@@ -43,7 +43,7 @@ Save the DSDT file from the topbar. \(File, then Save\)
 
 Copy this new DSDT.aml to /EFI/Clover/ACPI/patched.
 
-### Config edits
+## Config.plist
 
 Open _Clover Configurator_ and load your config.plist. Go to KextToPatch and add the following things, depending on your OS version:
 

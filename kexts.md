@@ -25,22 +25,22 @@ All the kexts shown here are available for download on the [_**kext repo**_](htt
 ### USB
 
 * \_\_[_USBInjectAll.kext_ ](https://bitbucket.org/RehabMan/os-x-usb-inject-all/overview)- best explained by the creator of the kext himself:  `In 10.11+ Apple has changed significantly the way the USB drivers work. In the absense of a port injector, the drivers use ACPI to obtain information about which ports are active. Often, this information is wrong. Instead of correcting the DSDT, a port injector can be used (just as Apple did for their own computers)`
-* \_\_[_GenericUSBXHCI.kext_](https://bitbucket.org/RehabMan/os-x-generic-usb3/overview) _-_ this kext is often needed for USB 3 support, especially on FX.
+* \_\_[_GenericUSBXHCI.kext_](https://bitbucket.org/RehabMan/os-x-generic-usb3/overview) _-_ this kext is often needed for USB 3 support, especially on FX. Might be temporarily needed on Ryzen.
 
 ### Graphics
 
-* _Whatevergreen.kext -_ this kext fixes a lot of GPU related issues.
-* _Lilu.kext -_ this kext acts as a loader for other kexts. More specifically it can patch kexts, processes and libraries.
+* \_\_[_Whatevergreen.kext_ ](https://github.com/acidanthera/WhateverGreen)_-_ this kext fixes a lot of GPU related issues.
+* \_\_[_Lilu.kext_](https://github.com/acidanthera/Lilu) _-_ this kext acts as a loader for other kexts. More specifically it can patch kexts, processes and libraries.
 
 ### WiFi and Bluetooth <a id="wifi-and-bluetooth"></a>
 
-\(I myself don't use bluetooth nor WiFi so I don't have knowledge in that, but here is some information on the subject by CorpNewt. _Check credits for more info_\)  
+\(I myself don't use bluetooth nor WiFi so I don't have knowledge in that, but here is some information on the subject by CorpNewt. _Check **Credits** for more info_\)  
   
-Apple is pretty minimal with their WiFi support, so I'll only cover the two main chipsets I'm familiar with. I've used a BCM94360CD + PCIe adapter, and BCM94352HMB/BCM94352Z in my Hackintoshes. The BCM94360CD worked OOB with no extras as it's a native card. For the BCM94352 flavors, I've been using [_AirportBrcmFixup.kext_](https://github.com/acidanthera/AirportBrcmFixup) and the companion [_Lilu.kext_](https://github.com/vit9696/Lilu/releases) for WiFi setup and _BrcmBluetoothInjector.kext_ \(on 10.13.6+\) or _BrcmPatchRAM2.kext_ alongside _BrcmFirmwareData.kext_ - all of the Brcm\* kexts are from RehabMan's [_OS-X-BrcmPatchRAM_](https://github.com/RehabMan/OS-X-BrcmPatchRAM) repo.
+`Apple is pretty minimal with their WiFi support, so I'll only cover the two main chipsets I'm familiar with. I've used a BCM94360CD + PCIe adapter, and BCM94352HMB/BCM94352Z in my Hackintoshes. The BCM94360CD worked OOB with no extras as it's a native card. For the BCM94352 flavors, I've been using` [_`AirportBrcmFixup.kext`_](https://github.com/acidanthera/AirportBrcmFixup) `and the companion` [_`Lilu.kext`_](https://github.com/vit9696/Lilu/releases) `for WiFi setup and` _`BrcmBluetoothInjector.kext`_ `(on 10.13.6+) or` _`BrcmPatchRAM2.kext`_ `alongside` _`BrcmFirmwareData.kext`_ `- all of the Brcm* kexts are from RehabMan's` [_`OS-X-BrcmPatchRAM`_](https://github.com/RehabMan/OS-X-BrcmPatchRAM) `repo.`
 
 ### Audio
 
-* _VoodooHDA.kext -_ a jack of all trades master of none solution to audio. Required on FX, but has better alternatives on Ryzen.
+* \_\_[_VoodooHDA.kext_ ](https://sourceforge.net/projects/voodoohda/)_-_ a jack of all trades master of none solution to audio. Required on FX, but has better alternatives on Ryzen.
 * If you are on Ryzen and have a supported codec we will be using native audio, this will be setup later on. This has a better quality than VoodooHDA along with other improvements.
 
 ### Extra

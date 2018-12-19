@@ -68,7 +68,7 @@ Currently you are probably using GenericUSBXHCI.kext for USB support on your Ryz
 
 This kext syncs the TSC, improving sync for time, audio and video.
 
-Download it here, and install it as follows:
+[Download it here,](https://github.com/IOIIIO/AMDVanilla/raw/master/files/VoodooTSCSyncAMD.zip) and install it as follows:
 
 Open _Terminal_ and run the following command
 
@@ -76,5 +76,7 @@ Open _Terminal_ and run the following command
 echo $(($(sysctl -n hw.ncpu) - 1))
 ```
 
-Note down 
+Note down the response.
+
+Right click on VoodooTSCSync.kext and select _Show package contents_. When that is done navigate to Contents and open Info.plist. I recommend the free piece of software _Textwrangler_ for this. Find line 36 or just search for `#CORE`. The line above it should say `<key>IOCPUNumber</key>`. Now change \#CORE with the number you got before. Save the changes, and add the kext to your EFI's kexts/Other.
 
