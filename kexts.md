@@ -41,7 +41,7 @@ Apple is pretty minimal with their WiFi support, so I'll only cover the two main
 ### Audio
 
 * _VoodooHDA.kext -_ a jack of all trades master of none solution to audio. Required on FX, but has better alternatives on Ryzen.
-* _AppleALC.kext -_ if you are on Ryzen and have a supported codec you can use AppleALC for native audio. This has a better quality than VoodooHDA along with other improvements. \(_AppleALC also needs Lilu.kext_\)
+* If you are on Ryzen and have a supported codec we will be using native audio, this will be setup later on. This has a better quality than VoodooHDA along with other improvements.
 
 ### Extra
 

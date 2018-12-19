@@ -9,7 +9,7 @@ description: Some terms you will need to learn as they will be used later on.
   * It injects kexts on boot.
   * Handles passing information like the SMBIOS to macOS
   * and a lot more.
-* _Bootloader:_ A piece of code that on boot loads the operating system.
+* _Bootloader:_ A piece of software that on boot loads the operating system.
 * _Kext:_ A combination of **K**ernel **Ext**ension. These are additions to the macOS kernel which you can think of like drivers on windows.
 
 

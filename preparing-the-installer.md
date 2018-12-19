@@ -1,9 +1,5 @@
 # Preparing the installer
 
-### Installing Clover
-
-Launch the Clover installer and make sure that you select **your USB drive** as the destination. As the default installer settings are pretty bad we will want to adjust them. Press the **Customise** button for that.
-
 ### Copying the kernel
 
 macOS will not be able to boot on AMD systems in this configuration. For that to work we need to replace a few files.
@@ -65,4 +61,35 @@ This process can take a few minutes and when it is done you will most likely rec
 The first 5 commands are used to repair permissions on the kexts. The first command changes directory to the Library folder. The second one changes the owner of all files in the `Extensions` folder to root.The third one changes the permissions of all kexts in the Extensions folder so that the file owner has full control. The command after that strips all extra attributes the files might have. The last of this section of commands basically updates the modification date of all files in the Extensions folder.
 
 The last two commands are used to rebuild the prelinkedkernel. The first one removes the existing file and the second one is what rebuild the kernel cache aka the prelinkedkernel.
+
+### Installing Clover
+
+For this next part we will be installing the bootloader _Clover_ to the USB drive so that it can be booted on regular computers, not just Mac's.  
+Let's get started.
+
+Launch your Clover installer that you downloaded in the prerequisites section. On the second page of the installer **make sure to select your USB drive!** The default settings set by Clover are not all that desirable so we need to **Customise** the install.
+
+You want to use the following settings, as shown in the screenshots. This is generally all that's needed.  
+
+
+* _Install Clover for UEFI booting only_
+* _Install Clover to the ESP_
+* Under _Drivers64UEFI:_
+  * _AptioMemoryFix_ \(the new hotness that includes NVRAM fixes, as well as better memory management\)
+  * _VBoxHfs-64.efi_ \(or _HFSPlus.efi_ if available\) - one of these is required for Clover to see and boot HFS+ volumes. If you see the option to enable it in the installer, make sure it's selected - if you don't see it in the installer, verify that one of them exists in the _EFI -&gt; CLOVER -&gt; drivers64UEFI_ folder
+  * _ApfsDriverLoader_ - \(Available in Dids' Clover builds - or [here](https://github.com/acidanthera/ApfsSupportPkg/releases)\) this allows Clover to see and boot from APFS volumes by loading apfs.efi from ApfsContainer located on block device \(if using AptioMemoryFix as well, requires R21 or newer\)
+
+Provided you don't plan on using FireVault \(which I don't even think works properly on AMD\) this concludes our clover installation!
+
+### Copying kexts
+
+When Clover is done installing a drive named EFI will pop up on your desktop. Open this and navigate to  _/Volumes/EFI/EFI/CLOVER/kexts/Other_ and copy all your .kext files that you downloaded in the Kexts section here. 
+
+You will also see other folders named 10.xx in the _/kexts/_ directory. These are not needed for our goal. These are used for version specific kexts in case you are multibooting multiple macOS versions.
+
+## Next up:
+
+### Setting up Clover.
+
+First some theory on how it all works, and after that I will show a few different configs that should work as a basis for most systems.
 
