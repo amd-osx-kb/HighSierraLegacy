@@ -127,7 +127,7 @@ We don't need to change anything here. You can come here if you want to change t
 
 ### XML
 
-```text
+```markup
 <key>CPU</key>
 	<dict>
 		<key>BusSpeedkHz</key>
@@ -169,18 +169,6 @@ We've changed a few settings here, nothing required, but supposedly can help whe
 		<key>USB</key>
 		<dict>
 			<key>FixOwnership</key>
-			<true/>
-		</dict>
-	</dict>
-	<key>GUI</key>
-	<dict>
-		<key>Scan</key>
-		<dict>
-			<key>Entries</key>
-			<true/>
-			<key>Linux</key>
-			<true/>
-			<key>Tool</key>
 			<true/>
 		</dict>
 	</dict>

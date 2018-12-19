@@ -7,25 +7,32 @@ macOS will not be able to boot on AMD systems in this configuration. For that to
 The new Kernel will need to be placed in the _System/Library/Kernels_ folder of the installer USB. This folder does not exist by default, so you need to go to _System/Library_ and create the folder _Kernels_. 
 
 ```bash
-cd /Volumes/Mac OS X Base Installer/System/Library
+diskutil mount /dev/disk#s#
+cd /Volumes/OS\ X\ Base\ System/System/Library
 mkdir Kernels
-cp ~/Desktop/kernel kernel
+cp ~/Desktop/kernel Kernels/kernel
+sudo cp -r ~/Desktop/System.kext Extensions/System.kext
 ```
 
-The first command changes the current directory to _/Library_  
-The second command creates the _Kernels_ directory  
-The third command copies the Kernel from the desktop
+The first command mounts the USB drive.  
+The second command changes the current directory to _/Library_  
+The third command creates the _Kernels_ directory  
+The fourth command copies the Kernel from the desktop  
+The fifth command copies the System.kext from the desktop
 
 ### Copying some kexts
 
-The BaseSystem image does not have all the kexts that we need to boot macOS on AMD. We will need to have to add those ourselves from an existing High Sierra install. I will look a bit more deeply in to what kexts are truly needed, but from what I managed to find in some online research and trial/error:
+The BaseSystem image does not have all the kexts that we need to boot macOS on AMD. We will need to have to add those ourselves from an existing High Sierra install. 
+
+If you are installing 10.13.3 or 10.13.6 you can use the kexts supplied by me in **Prerequisites**. Extract the .ZIP to your desktop, otherwise you will have to extract the kexts yourself from InstallESD.dmg, using something like Pacifist. To do so go to `Install macOS.app/Contents/Shared Support`. Copy InstallESD to your desktop and open it. You need the file in `Packages/Core.pkg`
 
 * AppleActuatorDriver.kext
 * AppleSMCRTC.kext
 * AppleUSBCommon.kext
 * IOSlaveProcessor.kext
 * KernelRelayHost.kext
-* IOUSBHostFamily.kext
+* IONetworkingFamily.kext \(You need the 10.13.3 version on 10.13.3+\)
+* IOUSBFamily.kext
 
 If you are using an FX system you will need to download the following files as well:
 
@@ -37,6 +44,14 @@ These files can be downloaded here. We do not need them on Ryzen as we will be s
 #### Side note:
 
 Do not add your other kexts here. We will add those later to Clover.
+
+#### If you decide to use on of my .zip files, install as follows:
+
+Extract the Zip file to your desktop to a folder named kexts. After that open _Terminal_ and run the following command to copy the needed files.
+
+```bash
+cp -r ~/Desktop/kexts/. Extensions/
+```
 
 ### Rebuilding the prelinkedkernel
 
@@ -52,8 +67,8 @@ sudo chown -R 0:0 Extensions
 sudo chmod -R 755 Extensions/*.kext
 sudo xattr -c Extensions/*
 sudo touch Extensions
-sudo rm /Volumes/BaseSystem/System/Library/PrelinkedKernels/prelinkedkernel
-sudo kextcache -u /Volumes/BaseSystem
+sudo rm /Volumes/OS\ X\ Base\ System/System/Library/PrelinkedKernels/prelinkedkernel
+sudo kextcache -u /Volumes/OS\ X\ Base\ System
 ```
 
 This process can take a few minutes and when it is done you will most likely receive an error complaining about `com.apple.kext.caches/Startup`, as long as you also receive a CacheID this is fine.
@@ -78,6 +93,7 @@ You want to use the following settings, as shown in the screenshots. This is gen
   * _AptioMemoryFix_ \(the new hotness that includes NVRAM fixes, as well as better memory management\)
   * _VBoxHfs-64.efi_ \(or _HFSPlus.efi_ if available\) - one of these is required for Clover to see and boot HFS+ volumes. If you see the option to enable it in the installer, make sure it's selected - if you don't see it in the installer, verify that one of them exists in the _EFI -&gt; CLOVER -&gt; drivers64UEFI_ folder
   * _ApfsDriverLoader_ - \(Available in Dids' Clover builds - or [here](https://github.com/acidanthera/ApfsSupportPkg/releases)\) this allows Clover to see and boot from APFS volumes by loading apfs.efi from ApfsContainer located on block device \(if using AptioMemoryFix as well, requires R21 or newer\)
+* _Install RC scripts on target volume_
 
 Provided you don't plan on using FireVault \(which I don't even think works properly on AMD\) this concludes our clover installation!
 
@@ -91,5 +107,5 @@ You will also see other folders named 10.xx in the _/kexts/_ directory. These ar
 
 ### Setting up Clover.
 
-First some theory on how it all works, and after that I will show a few different configs that should work as a basis for most systems.
+First some theory on how it all works, and after that I will show a few different configs that should work as a basis for most systems. Follow the guide for your CPU on the left side under the heading "_Example Config.plist's_", after reading the basics.
 

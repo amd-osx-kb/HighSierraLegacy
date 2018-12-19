@@ -43,6 +43,10 @@ All the kexts shown here are available for download on the [_**kext repo**_](htt
 * \_\_[_VoodooHDA.kext_ ](https://sourceforge.net/projects/voodoohda/)_-_ a jack of all trades master of none solution to audio. Required on FX, but has better alternatives on Ryzen.
 * If you are on Ryzen and have a supported codec we will be using native audio, this will be setup later on. This has a better quality than VoodooHDA along with other improvements.
 
+### Misc
+
+* _NullCPUPowerManagement.kext -_ This kext disables CPU powermanagement, as that is not supported on AMD chips.
+
 ### Extra
 
 Depending on what hardware you have in your machine you might need some other kexts. This list is more to be used to give you a general idea, you will probably have to do some google-fu.

@@ -12,6 +12,7 @@
 * _Apple_ - For making macOS in the first place.
 * _The Clover team -_ For creating Clover.
 * _Download-Fritz -_ For awaking my competitive side, wanting to publish my guide before his idea.
+* _Jadzia -_ For giving me a ZIP with the kexts needed for 10.13.6.
 * **You** - For reading the guide!
 
 ### Sources
