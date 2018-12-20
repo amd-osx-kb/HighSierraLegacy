@@ -38,6 +38,7 @@ You will be prompted to enter your password, and after that a drive named EFI wi
 Now from this EFI on your USB drive copy the following files and directories to the EFI of your drive:
 
 * kexts/
+* ACPI/patched/DSDT.aml
 * config.plist
 
 With this done Clover is installed to your HDD and you will no longer need your HDD to boot!
@@ -59,10 +60,6 @@ You can use [this useful guide](https://www.insanelymac.com/forum/topic/324195-n
 You may have noticed that you don't have sound on your Ryzen system. This can be fixed by following [the following guide](https://forum.amd-osx.com/viewtopic.php?f=24&t=4880) over at AMD OS X.
 
 **Use the** _**Semi**_**-Automated setup!**
-
-### **Fixing Ryzen USB**
-
-Currently you are probably using GenericUSBXHCI.kext for USB support on your Ryzen system, but that is not needed and can cause instabilities and even kernel panics! Ryzen USB has native support from macOS! This is shown on the following page.
 
 ### VoodooTSCSync
 

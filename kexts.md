@@ -25,7 +25,7 @@ All the kexts shown here are available for download on the [_**kext repo**_](htt
 ### USB
 
 * \_\_[_USBInjectAll.kext_ ](https://bitbucket.org/RehabMan/os-x-usb-inject-all/overview)- best explained by the creator of the kext himself:  `In 10.11+ Apple has changed significantly the way the USB drivers work. In the absense of a port injector, the drivers use ACPI to obtain information about which ports are active. Often, this information is wrong. Instead of correcting the DSDT, a port injector can be used (just as Apple did for their own computers)`
-* \_\_[_GenericUSBXHCI.kext_](https://bitbucket.org/RehabMan/os-x-generic-usb3/overview) _-_ this kext is often needed for USB 3 support, especially on FX. Might be temporarily needed on Ryzen.
+* \_\_[_GenericUSBXHCI.kext_](https://bitbucket.org/RehabMan/os-x-generic-usb3/overview) _-_ this kext is often needed for USB 3 support, especially on FX. 
 
 ### Graphics
 
@@ -45,7 +45,7 @@ All the kexts shown here are available for download on the [_**kext repo**_](htt
 
 ### Misc
 
-* _NullCPUPowerManagement.kext -_ This kext disables CPU powermanagement, as that is not supported on AMD chips.
+* \_\_[_NullCPUPowerManagement.kext_](https://github.com/corpnewt/NullCPUPowerManagement) _-_ This kext disables CPU powermanagement, as that is not supported on AMD chips.
 
 ### Extra
 

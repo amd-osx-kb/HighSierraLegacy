@@ -90,7 +90,7 @@ The only other things we've done on this page are enable that checkbox.
 <key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v keepsyms=1 debug=0x100</string>
+		<string>-v keepsyms=1 npci=0x3000 debug=0x100</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Timeout</key>
@@ -100,7 +100,7 @@ The only other things we've done on this page are enable that checkbox.
 
 ### Clover Configurator screenshots
 
-![Ryzen plist, Boot](../.gitbook/assets/screen-shot-2018-12-18-at-22.53.00.png)
+![](../.gitbook/assets/screen-shot-2018-12-21-at-00.36.11.png)
 
 ###  Explanation
 
@@ -111,6 +111,7 @@ We have a few boot args set here:
 * `-v` - this enables verbose mode, which shows all the _behind-the-scenes_ text that scrolls by as you're booting instead of the Apple logo and progress bar. It's invaluable to any Hackintosher, as it gives you an inside look at the boot process, and can help you identify issues, problem kexts, etc.
 * `debug=0x100` - this prevents a reboot on a kernel panic. That way you can \(hopefully\) glean some useful info and follow the breadcrumbs to get past the issues.
 * `keepsyms=1` - this is a companion setting to `debug=0x100` that tells the OS to also print the symbols on a kernel panic. That can give some more helpful insight as to what's causing the panic itself.
+* `ncpi=0x3000` - this fixes issues with PCI configuration. Without it the machine will often hang on boot.
 
 #### DefaultBootVolume and Timeout: <a id="defaultbootvolume-and-timeout"></a>
 
@@ -230,15 +231,17 @@ We don't have to do anything here
 ```markup
 <key>KernelAndKextPatches</key>
 	<dict>
-		<key>FakeCPUID</key>
-		<string>0x0406E3</string>
+		<key>AppleRTC</key>
+		<false/>
+		<key>KernelLapic</key>
+		<false/>
 		<key>KernelPm</key>
-		<true/>
+		<false/>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Extrenal Icons Patch</string>
+				<string>External Icons Patch</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
@@ -256,7 +259,7 @@ We don't have to do anything here
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Port limit increase (RegabMan)</string>
+				<string>Port limit increase (Rehabman)</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
@@ -280,18 +283,11 @@ We don't have to do anything here
 
 ### Clover Configurator Screenshots <a id="clover-configurator-screenshots-4"></a>
 
-![Ryzen plist, K&amp;K Patches](../.gitbook/assets/screen-shot-2018-12-18-at-22.53.19.png)
+![](../.gitbook/assets/screen-shot-2018-12-21-at-00.39.03.png)
 
 ### Explanation <a id="explanation-4"></a>
 
 In this section, we've enabled a few settings and added some kext patches.
-
-#### Checkboxes: <a id="checkboxes"></a>
-
-We have a couple checkboxes selected here:
-
-* _Apple RTC_ - this ensures that we don't have a BIOS reset on reboot.
-* _KernelPM_ - this setting prevents writing to MSR 0xe2 which can prevent a kernel panic at boot.
 
 #### KextsToPatch: <a id="kextstopatch"></a>
 
@@ -437,4 +433,8 @@ We set it to `Yes` to make sure that all the kexts we added before get injected 
 
 In this case I have checked the NvidiaWeb box. This is because I use a modern Nvidia GPU which requires WebDrivers. This option enables the driver to load when it is installed.  
 
+
+## Example
+
+For those who want it [here is my example Ryzen plist](https://raw.githubusercontent.com/IOIIIO/AMDVanilla/master/files/config.plist). If you plan on using it, I recommend to regenerate the SMBIOS as shown in the above tutorial. This serial has probably been used many times over by now.
 

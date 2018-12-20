@@ -18,7 +18,7 @@ The first command mounts the USB drive.
 The second command changes the current directory to _/Library_  
 The third command creates the _Kernels_ directory  
 The fourth command copies the Kernel from the desktop  
-The fifth command copies the System.kext from the desktop
+The fifth command copies the _System.kext_ from the desktop
 
 ### Copying some kexts
 
@@ -34,7 +34,7 @@ If you are installing 10.13.3 or 10.13.6 you can use the kexts supplied by me in
 * IONetworkingFamily.kext \(You need the 10.13.3 version on 10.13.3+\)
 * IOUSBFamily.kext
 
-If you are using an FX system you will need to download the following files as well:
+You will also need the following files for USB support. On FX this is permanent, on Ryzen we will be replacing it later by a better alternative:
 
 * DummyUSBEHCIPCI.kext
 * DummyUSBXHCIPCI.kext

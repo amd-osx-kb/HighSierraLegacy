@@ -8,9 +8,9 @@
 * [Creating the USB installer](creating-the-usb-installer.md)
 * [Preparing the installer](preparing-the-installer.md)
 * [Config.plist Basics](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-basics)
+* [Ryzen native USB](ryzen-native-usb.md)
 * [Installing](untitled.md)
 * [Final touches](final-touches.md)
-* [Ryzen native USB](ryzen-native-usb.md)
 * [Credits](credits.md)
 
 ## Example Config.plist's

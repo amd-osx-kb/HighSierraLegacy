@@ -1,6 +1,6 @@
 # Creating the USB installer
 
-aBefore we can start with making the actual installer we will need to prepare the 8+ GB USB drive. You need to make sure your drive is set up in the following way:
+Before we can start with making the actual installer we will need to prepare the 8+ GB USB drive. You need to make sure your drive is set up in the following way:
 
 * GUID Partition Map \(GPT\)
 * 1 Data partition

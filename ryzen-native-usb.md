@@ -1,26 +1,17 @@
 # Ryzen native USB
 
-## Setup
-
-### Deleting unneeded files
-
-Mount your EFI as described in **Final touches**, except this time mount the EFI of your HDD. 
-
-Now from the _kexts/Other_ directory you can delete GenericUSBXHCI.kext
-
 ### Downloading tools
 
 You will need the following tools to continue:
 
-* MaciASL
-* DPCIManager
+* [MaciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/)
 * Clover Configurator
 
 ## DSDT
 
 ### Extracting DSDT
 
-Launch the _DPCIManager_ utility and press on Extract DSDT. Save the file somewhere memorable.
+Boot your USB drive with clover and press F4. Clover will extract your DSDT to /EFI/Clover/ACPI/origin
 
 ### Editing the DSDT
 
@@ -32,7 +23,7 @@ Click on the + sign to add a new repository and add the following:
 
 ```text
 Name : Ryzen USB
-URL : https://raw.githubusercontent.com/AlGreyy/Ryzen-USB-fix-/master/USBfix.txt
+URL : https://raw.githubusercontent.com/AlGreyy/Ryzen-USB-fix-/master/USBfix
 ```
 
 Close this window

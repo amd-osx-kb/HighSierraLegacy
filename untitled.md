@@ -33,7 +33,7 @@ All other settings are best set as advised, but are not crucial.
 
 ### First boot
 
-When you first boot your computer you will be prompted with the Clover screen. Chose the macOS Base System entry. When this is finally booted you will be greeted by a screen to chose your language. Do just that and a menu of options will be shown.
+When you first boot your computer you will be prompted with the Clover screen. Chose the _OS X Base System_ entry. When this is finally booted you will be greeted by a screen to chose your language. Do just that and a menu of options will be shown.
 
 ### Drive setup
 
@@ -59,7 +59,7 @@ When this part is done the installer will automatically reboot.
 
 During the previous phase of the install a prelinkedkernel was copied over to the drive. This is the default prelinkedkernel containing the native Intel kernel, and thus cannot be booted by our AMD system. We will have to replace it. 
 
-To do so boot back in to the _Mac OS X Base System_, in Clover, instead of what is automatically selected. Wait for the installer to boot again, chose your language and you will again be prompted by the window with multiple choices. This time we won't be using those.
+To do so boot back in to the _OS X Base System_, in Clover, instead of what is automatically selected. Wait for the installer to boot again, chose your language and you will again be prompted by the window with multiple choices. This time we won't be using those.
 
 On the bar on top of your screen press _Utilities_ and from the dropdown menu that shows up launch _Terminal_. Now enter the following command to copy the prelinkedkernel from our USB to the installer on the drive.
 
@@ -70,7 +70,7 @@ cp -Rf /System/Library/PrelinkedKernels/prelinkedkernel /Volumes/macOS/macOS\ In
 You can now reboot your computer by typing
 
 ```bash
-reboot now
+reboot
 ```
 
 ### Installing macOS
@@ -89,9 +89,14 @@ cp -Rf /System/Library/Kernels/kernel /Volumes/macOS/System/Library/Kernels/kern
 
 #### Ryzen Instructions
 
-Now that the kernel has been copied you are almost done on Ryzen. You will only have to rebuild the prelinkedkernel aka kextcache. This is done in the same way as when we were setting up the USB drive.
+Now that the kernel has been copied you are almost done on Ryzen. You will need to copy over one kext and then you will only have to rebuild the prelinkedkernel aka kextcache. This is done in the same way as when we were setting up the USB drive.
 
 ```bash
+cp -rf /System/Library/Extensions/IONetworkingFamily.kext /Volumes/macOS/System/Library/Extensions/IONetworkingFamily.kext
+chown -R 0:0 /Volumes/macOS/System/Library/Extensions
+chmod -R 755 /Volumes/macOS/System/Library/Extensions/*.kext
+touch /Volumes/macOS/System/Library/Extensions
+
 rm -rf /Volumes/macOS/System/Library/PrelinkedKernels/prelinkedkernel
 kextcache -u /Volumes/macOS
 ```
@@ -100,10 +105,11 @@ Again we first delete the old prelinkedkernel just in case, and with the second 
 
 #### FX Instructions
 
-If you are on FX and have used the aforementioned DummyUSB kexts you will need to copy them over to the new install. You can do that with the following command:
+If you are on FX and have used the aforementioned DummyUSB kexts you will need to copy them over to the new install, you will also need to copy the IONetworking kext. You can do that with the following command:
 
 ```bash
 cp -rf /System/Library/Extensions/Dummy*.kext /Volumes/macOS/System/Library/Extensions/
+cp -rf /System/Library/Extensions/IONetworkingFamily.kext /Volumes/macOS/System/Library/Extensions/IONetworkingFamily.kext
 ```
 
 Since we are adding kexts to S/L/E we will have to fix their permissions. This is done just like before with the following commands:
@@ -123,4 +129,8 @@ kextcache -u /Volumes/macOS
 ```
 
 Again we first delete the old prelinkedkernel just in case, and with the second command we rebuild the kextcache on the _macOS_ volume. Once again it will probably spit out a lot of text, but so long as you get the cache ID in the end the rebuild succeeded.
+
+### After installing
+
+Set up macOS to your linking, but do not sign in to AppleID when prompted. You can do this later in the settings.
 

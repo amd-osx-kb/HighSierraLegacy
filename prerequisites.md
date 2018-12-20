@@ -10,7 +10,7 @@ What will you need to make an installer:
 * [Clover installer](https://github.com/Dids/clover-builder/releases) \(Daily builds done courtesy of Dids\)
 * [Clover Configurator ](http://mackie100projects.altervista.org/download-clover-configurator/)\(You can also use any text editor, but CC is generally a lot faster\)
 * [FakeSMC.kext](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/) \(The one kext you absolutely need. It emulates the SMC of a Mac and basically tells macOS "Yes this is a real mac, you are free to boot"\)
-* [Installer kexts](https://github.com/IOIIIO/AMDVanilla/raw/master/files/kexts.zip) \(These are first party Apple kexts that are needed to rebuild the kextcache, but are missing from the installer. These specific ones are for 10.13.6
+* [Installer kexts](https://github.com/IOIIIO/AMDVanilla/tree/master/files) \(These are first party Apple kexts that are needed to rebuild the kextcache, but are missing from the installer. These specific ones are for 10.13.6 and 10.13.3.
 * Any kexts that are needed for your specific hardware
 * A cup of coffee \(or a few\)
 * Patience
