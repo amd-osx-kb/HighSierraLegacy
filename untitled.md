@@ -8,7 +8,7 @@ Now how do you install with it?
 For the best results you should set your BIOS to the following settings:
 
 * Execute Virtual Bit: Enabled 
-* **Secure Virtual Machine\(SVM\): Disabled** 
+* Secure Virtual Machine\(SVM\): Disabled \(Enable if needed, but untested and may lead to issues.\)
 * Cool 'n Quiet = Enabled 
 * **APU = Disabled \(May also be denoted as** _**Integrated Graphics**_**\)**
 * Spread Spectrum = Auto 
@@ -18,7 +18,7 @@ For the best results you should set your BIOS to the following settings:
 * **XHCI Handoff = Enabled** 
 * _**Sata Mode = AHCI**_ 
 * IDE = Disabled 
-* IOMMU = Disabled
+* **IOMMU = Disabled**
 * HPC = Enabled
 
 The settings denoted in bold and italic are absolutely required, as without them basic functionality such as HDD access will not be available.
