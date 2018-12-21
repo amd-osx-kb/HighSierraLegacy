@@ -1,6 +1,6 @@
 # Terms
 
-* _Bootloader:_ A piece of software that  basically just prepares the boot environment according to the OS' expectations.
+* _Bootloader:_ A piece of software that loads the operating system.
 * _Clover:_ This is the bootloader that we will be using. We need this for a few important things. Most importantly:
   * macOS installs on a partition formatted in either APFS or HFS+. A standard \(UEFI\) BIOS cannot read from these formats.
   * It injects kexts on boot.
