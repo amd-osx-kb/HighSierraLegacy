@@ -20,3 +20,26 @@ Making your own install teaches you a lot more about how hackintoshing works whi
 
 
 
+## The good, the bad and the ugly:
+
+### What works
+
+* AMD Ryzen CPUs
+* Native USB
+* Native Audio
+* The latest version of macOS High Sierra
+* iCloud
+
+So much works, that it is easier to say what doesn't so here we go:
+
+* AMD FX CPUs \(I don't have one to use for testing\)
+* Internal Graphics. Be it an AMD Ax CPU or one of the G Ryzen chips, the GPU will **not** work.
+* Lower GPU performance, more specifically:
+  * About 10% lower on AMD GPUs
+  * About 75% lower on Nvidia GPUs
+* IOMMU
+* iMessage, FaceTime
+* Siri
+
+
+
