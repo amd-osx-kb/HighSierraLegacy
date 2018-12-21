@@ -1,7 +1,3 @@
----
-description: Some terms you will need to learn as they will be used later on.
----
-
 # Terms
 
 * _Bootloader:_ A piece of software that on boot loads the operating system.

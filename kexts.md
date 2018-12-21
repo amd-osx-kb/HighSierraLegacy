@@ -1,7 +1,3 @@
----
-description: This is where the fun starts
----
-
 # Kexts
 
 ## What kexts do you need?

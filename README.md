@@ -18,8 +18,6 @@ A vanilla install doesn't have any unneeded kexts or modifications which could c
 
 Making your own install teaches you a lot more about how hackintoshing works which in turn makes it easier for you to troubleshoot any potential issues.
 
-
-
 ## The good, the bad and the ugly:
 
 ### What works
@@ -40,6 +38,4 @@ So much works, that it is easier to say what doesn't so here we go:
 * IOMMU
 * iMessage, FaceTime
 * Siri
-
-
 

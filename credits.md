@@ -15,6 +15,8 @@
 * _Jadzia -_ For giving me a ZIP with the kexts needed for 10.13.6.
 * **You** - For reading the guide!
 
+If you for some reason need to contact me personally, I am available on discord with the tag @NoOne\#8086. I am more likely to answer a hackintosh question if you ask it in either the r/hackintosh discord or the AMD OS X discord.
+
 ### Sources
 
 * [CorpNewt's Vanilla Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/)
