@@ -13,7 +13,7 @@
 * [Final touches](final-touches.md)
 * [Credits](credits.md)
 
-## Example Config.plist's
+## Example Config.plists
 
 * [Ryzen](example-config.plists/ryzen.md)
 * [FX](example-config.plists/fx.md)

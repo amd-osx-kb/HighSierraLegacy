@@ -4,7 +4,7 @@
 
 ### The kext that is absolutely required
 
-_FakeSMC.kext_ is as aforementioned essential. This kext is what tells macOS "Yes this is a real mac", emulating the functionality of the SMC on real mac's \(from there the name\). Without it, no Hackintosh.
+_VirtualSMC.kext_ \(Or FakeSMC.kext\) is as aforementioned essential. This kext is what tells macOS "Yes this is a real mac", emulating the functionality of the SMC on real mac's \(from there the name\). Without it, no Hackintosh.
 
 ### Where can I find these kexts?
 

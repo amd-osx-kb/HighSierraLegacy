@@ -108,9 +108,9 @@ The only other things we've done on this page are enable that checkbox.
 
 We have a few boot args set here:
 
-* `-v` - this enables verbose mode, which shows all the _behind-the-scenes_ text that scrolls by as you're booting instead of the Apple logo and progress bar. It's invaluable to any Hackintosher, as it gives you an inside look at the boot process, and can help you identify issues, problem kexts, etc.
-* `debug=0x100` - this prevents a reboot on a kernel panic. That way you can \(hopefully\) glean some useful info and follow the breadcrumbs to get past the issues.
-* `keepsyms=1` - this is a companion setting to `debug=0x100` that tells the OS to also print the symbols on a kernel panic. That can give some more helpful insight as to what's causing the panic itself.
+* `-v` - this enables verbose mode, which shows all the _behind-the-scenes_ text that scrolls by as you're booting instead of the Apple logo and progress bar. It's invaluable to any Hackintosher, as it gives you an inside look at the boot process, and can help you identify issues, problem kexts, etc. _**Remove this for a nice GUI bootscreen when you are done installing.**_
+* `debug=0x100` - this prevents a reboot on a kernel panic. That way you can \(hopefully\) glean some useful info and follow the breadcrumbs to get past the issues. 
+* `keepsyms=1` - this is a companion setting to `debug=0x100` that tells the OS to also print the symbols on a kernel panic. That can give some more helpful insight as to what's causing the panic itself. _**Keep this only during the install phase as it could cause insecurity in normal use.**_
 * `ncpi=0x3000` - this fixes issues with PCI configuration. Without it the machine will often hang on boot.
 
 #### DefaultBootVolume and Timeout: <a id="defaultbootvolume-and-timeout"></a>
@@ -151,7 +151,8 @@ We don't need to change anything here. You can come here if you want to change t
 We've changed a few settings here, nothing required, but supposedly can help when some experience issues with audio and video being out of sync.
 
 * _Frequency MHz -_ This is the frequency of your CPU in MHz. In my case the CPU runs at 4.1GHz so I entered 4100MHz.
-* _Bus Speed kHz -_ This is not actually the FSB of your CPU but it is a little higher to make sure everything stays in sync. Stick with the given value.
+* ~~_Bus Speed kHz -_ This is not actually the FSB of your CPU but it is a little higher to make sure everything stays in sync. Stick with the given value.~~
+  * This is unneeded as of kernel version 2.0. Use only if you use an older kernel version.
 * _Latency -_ " This parameter value represents the C3 entry latency issued when entering C3 state." or in layman's terms: Disabling speedstep, since AMD CPUs don't support that.
 * _Type -_ Determines what CPU name is displayed in _About this mac_
 

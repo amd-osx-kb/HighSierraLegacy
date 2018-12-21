@@ -8,7 +8,7 @@ description: A quick and dirty guide on making a vanilla AMD hackintosh.
 
 ### It's clean
 
-The AMD distro's are designed to be ran on various different hardware combinations, while a vanilla install is made for your specific hardware. This means that your install will only have what it needs and no extra useless junk.
+The AMD distros are designed to be ran on various different hardware combinations, while a vanilla install is made for your specific hardware. This means that your install will only have what it needs and no extra useless junk.
 
 ### Tailor made for your hardware
 
