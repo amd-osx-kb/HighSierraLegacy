@@ -58,5 +58,5 @@ AppleUSBXHCI               C8000000 83FB02           C8000000 83FB11       algre
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Now save the config, and reboot your machine. If your USB still works all is fine, and your system will now be more stable!
+Now save the config, and reboot your machine. You should now be able to boot in to the macOS installer.
 
