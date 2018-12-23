@@ -9,7 +9,7 @@ Because of this we need to change its kernel with the AMD one as well to be able
 
 ## Where do I get this mystical BaseSystem.dmg?
 
-First you will need a copy of macOS 10.13.6. That's the latest version of High Sierra and with that the OS this guide was written for. _Now how do I get this image?_ The .dmg is very easy to acquire, and it is done as follows:
+First you will need a copy of macOS 10.13.6. That's the latest version of High Sierra and with that the OS this guide was written for. _**You need the full multiple gigabyte installer, not the 16 MB stump.**_ _Now how do I get this image?_ The .dmg is very easy to acquire, and it is done as follows:
 
 1. Navigate to the directory of your _"Install macOS High Sierra.app"_ file.
 2. Right click on the file and press _"Show package contents"_
