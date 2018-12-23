@@ -62,7 +62,7 @@ Open a Finder window and right click on your USB drive. Press `Get Info`. On the
 Now that this is done, open a terminal window again and execute the following commands:
 
 ```bash
-cd /Volumes/BaseSystem/System/Library/
+cd /Volumes/OS\ X\ Base\ System/System/Library/
 sudo chown -R 0:0 Extensions
 sudo chmod -R 755 Extensions/*.kext
 sudo xattr -c Extensions/*
