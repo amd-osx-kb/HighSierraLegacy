@@ -23,7 +23,7 @@ Click on the + sign to add a new repository and add the following:
 
 ```text
 Name : Ryzen USB
-URL : https://raw.githubusercontent.com/AlGreyy/Ryzen-USB-fix-/master/USBfix
+URL : https://raw.githubusercontent.com/AlGreyy/Ryzen-USB-fix-/master
 ```
 
 Close this window
