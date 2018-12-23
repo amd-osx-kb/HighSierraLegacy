@@ -8,7 +8,7 @@ _VirtualSMC.kext_ \(Or FakeSMC.kext\) is as aforementioned essential. This kext 
 
 ### Where can I find these kexts?
 
-All the kexts shown here are available for download on the [_**kext repo**_](https://1drv.ms/f/s!AiP7m5LaOED-mo9XA4Ml-69cwAsikQ) _****_provided and maintained by Goldfish64. All these kexts are automagically built when a new kext update is commited.
+All the kexts shown here are available for download on the [_**kext repo**_](https://1drv.ms/f/s!AiP7m5LaOED-m-J8-MLJGnOgAqnjGw) _****_provided and maintained by Goldfish64. All these kexts are automagically built when a new kext update is commited.
 
 ### Ethernet
 
