@@ -15,7 +15,7 @@ sudo cp -r ~/Desktop/System.kext Extensions/System.kext
 ```
 
 The first command mounts the USB drive.  
-The second command changes the current directory to _/Library_  
+The second command changes the current directory to the USB drive's _System/Library_  
 The third command creates the _Kernels_ directory  
 The fourth command copies the Kernel from the desktop  
 The fifth command copies the _System.kext_ from the desktop
