@@ -13,6 +13,7 @@ What will you need to make an installer:
   * These days a modern alternative to the FakeSMC.kext has emerged:
   * [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC) It does the same basic things as FakeSMC but is the more modern and recommended alternative. Use FakeSMC only if VirtualSMC does not work.
 * [Installer kexts](https://github.com/IOIIIO/AMDVanilla/tree/master/files) \(These are first party Apple kexts that are needed to rebuild the kextcache, but are missing from the installer. These specific ones are for 10.13.6 and 10.13.3.
+* [The AMD kernel ](https://github.com/Shaneee92/AMD-High-Sierra-XNU/releases)\(Extract the .zip to your desktop, futher commands using it will be based on it being on the desktop\)
 * Any kexts that are needed for your specific hardware
 * A cup of coffee \(or a few\)
 * Patience
