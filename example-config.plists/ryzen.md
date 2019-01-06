@@ -292,7 +292,7 @@ In this section, we've enabled a few settings and added some kext patches.
 
 #### KextsToPatch: <a id="kextstopatch"></a>
 
-We added 4 different kexts to patch here. Three of them are for USB port limit increases, and the last acts as an _orange icons fix_ - when internal drives are hotpluggable, and treated as external drives.
+We added 3 different kexts to patch here. Three of them are for USB port limit increases, and the last acts as an _orange icons fix_ - when internal drives are hotpluggable, and treated as external drives. The last patch is the native USB patch from chapter **Ryzen native USB**. This is not in the XML, as it will differ per OS version.
 
 You'll notice that there are MatchOS values set for each of the USB port limit patches. You can remove any of the entries for OS versions you don't intend to run. They won't do any harm being there, but if you want a clean, minimal plist, there's no sense in having them.
 
