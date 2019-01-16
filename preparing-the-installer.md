@@ -4,7 +4,7 @@
 
 macOS will not be able to boot on AMD systems in this configuration. For that to work we need to replace a few files.
 
-The new Kernel will need to be placed in the _System/Library/Kernels_ folder of the installer USB. This folder does not exist by default, so you need to go to _System/Library_ and create the folder _Kernels_. 
+The new Kernel will need to be placed in the _System/Library/Kernels_ folder of the installer USB. This folder does not exist by default, so you need to go to _System/Library_ and create the folder _Kernels_.
 
 ```bash
 diskutil mount /dev/disk#s#
@@ -22,7 +22,7 @@ The fifth command copies the _System.kext_ from the desktop
 
 ### Copying some kexts
 
-The BaseSystem image does not have all the kexts that we need to boot macOS on AMD. We will need to have to add those ourselves from an existing High Sierra install. 
+The BaseSystem image does not have all the kexts that we need to boot macOS on AMD. We will need to have to add those ourselves from an existing High Sierra install.
 
 If you are installing 10.13.3 or 10.13.6 you can use the kexts supplied by me in **Prerequisites**. Extract the .ZIP to your desktop, otherwise you will have to extract the kexts yourself from InstallESD.dmg, using something like Pacifist. To do so go to `Install macOS.app/Contents/Shared Support`. Copy InstallESD to your desktop and open it. You need the file in `Packages/Core.pkg`
 
@@ -55,7 +55,7 @@ cp -r ~/Desktop/kexts/. Extensions/
 
 ### Rebuilding the prelinkedkernel
 
-macOS does not use the kernel file to boot. Instead it uses the prelinkedkernel. This is a file containing the Kernel along with a cache of kexts. Because of this in order to be able to boot we need to rebuild it. First we will have to rebuild the permissions. 
+macOS does not use the kernel file to boot. Instead it uses the prelinkedkernel. This is a file containing the Kernel along with a cache of kexts. Because of this in order to be able to boot we need to rebuild it. First we will have to rebuild the permissions.
 
 Open a Finder window and right click on your USB drive. Press `Get Info`. On the very bottom of the window that just opened press on the lock and enter your password to unlock some extra settings. Now uncheck `Ignore Ownership` from the now no longer greyed out options at the bottom of the page.
 
@@ -84,8 +84,7 @@ Let's get started.
 
 Launch your Clover installer that you downloaded in the prerequisites section. On the second page of the installer **make sure to select your USB drive!** The default settings set by Clover are not all that desirable so we need to **Customise** the install.
 
-You want to use the following settings, as shown in the screenshots. This is generally all that's needed.  
-
+You want to use the following settings, as shown in the screenshots. This is generally all that's needed.
 
 * _Install Clover for UEFI booting only_
 * _Install Clover to the ESP_
@@ -99,7 +98,7 @@ Provided you don't plan on using FileVault \(which I don't even think works prop
 
 ### Copying kexts
 
-When Clover is done installing a drive named EFI will pop up on your desktop. Open this and navigate to  _/Volumes/EFI/EFI/CLOVER/kexts/Other_ and copy all your .kext files that you downloaded in the Kexts section here. 
+When Clover is done installing a drive named EFI will pop up on your desktop. Open this and navigate to _/Volumes/EFI/EFI/CLOVER/kexts/Other_ and copy all your .kext files that you downloaded in the Kexts section here.
 
 You will also see other folders named 10.xx in the _/kexts/_ directory. These are not needed for our goal. These are used for version specific kexts in case you are multibooting multiple macOS versions.
 
